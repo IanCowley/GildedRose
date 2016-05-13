@@ -154,6 +154,54 @@ namespace GildedRose.Tests
                 .Start();
         }
 
+        [Fact]
+        public void GIVEN_Item_Is_Dexterity_Vest_WHEN_UpdateQuality_THEN_Lowers_Quality_AND_Sellin()
+        {
+            var item = new Item();
+            var quality = 2;
+            var sellin = 2;
+            var expectedQuality = 1;
+            var expectedSellin = 1;
+
+            Story.Given("Item is Dexterity Vest", () => this.PopulateItem(ItemTypes.DexterityVest, item, quality, sellin))
+                .When("Update Quality", () => this.RunProgram(item))
+                .Then("Quality is lowered", () => this.QualityIs(item, expectedQuality))
+                .And("Sellin is lowered", () => this.SellinIs(item, expectedSellin))
+                .Start();
+        }
+
+        [Fact]
+        public void GIVEN_Item_Is_Elixir_Mongoose_WHEN_UpdateQuality_THEN_Lowers_Quality_AND_Sellin()
+        {
+            var item = new Item();
+            var quality = 2;
+            var sellin = 2;
+            var expectedQuality = 1;
+            var expectedSellin = 1;
+
+            Story.Given("Item is Elixir Mongoose", () => this.PopulateItem(ItemTypes.ElixirMongoose, item, quality, sellin))
+                .When("Update Quality", () => this.RunProgram(item))
+                .Then("Quality is lowered", () => this.QualityIs(item, expectedQuality))
+                .And("Sellin is lowered", () => this.SellinIs(item, expectedSellin))
+                .Start();
+        }
+
+        [Fact]
+        public void GIVEN_Item_Is_Conjured_Mana_Cake_WHEN_UpdateQuality_THEN_Lowers_Quality_AND_Sellin()
+        {
+            var item = new Item();
+            var quality = 2;
+            var sellin = 2;
+            var expectedQuality = 1;
+            var expectedSellin = 1;
+
+            Story.Given("Item is Conjured Mana Cake", () => this.PopulateItem(ItemTypes.ConjuredManaCake, item, quality, sellin))
+                .When("Update Quality", () => this.RunProgram(item))
+                .Then("Quality is lowered", () => this.QualityIs(item, expectedQuality))
+                .And("Sellin is lowered", () => this.SellinIs(item, expectedSellin))
+                .Start();
+        }
+
         private void SellinIs(Item item, int expectedSellin)
         {
             Assert.Equal(expectedSellin, item.SellIn);
