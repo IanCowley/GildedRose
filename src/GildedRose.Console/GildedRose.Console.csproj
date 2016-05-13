@@ -49,7 +49,7 @@
     <Compile Include="Strategies\BackStagePassesQualityUpdateStrategy.cs" />
     <Compile Include="Strategies\BrieQualityUpdateStrategy.cs" />
     <Compile Include="Strategies\IQualityUpdateStrategy.cs" />
-    <Compile Include="Strategies\QualityUpdateService.cs" />
+    <Compile Include="QualityUpdateService.cs" />
     <Compile Include="Strategies\QualityUpdateStrategyBase.cs" />
     <Compile Include="Strategies\StandardQualityUpdateStrategy.cs" />
     <Compile Include="Strategies\QualityUpdateStrategyRepository.cs" />

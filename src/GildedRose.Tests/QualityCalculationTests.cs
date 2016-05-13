@@ -187,18 +187,32 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void GIVEN_Item_Is_Conjured_Mana_Cake_WHEN_UpdateQuality_THEN_Lowers_Quality_AND_Sellin()
+        public void GIVEN_Item_Is_Conjured_Mana_Cake_WHEN_UpdateQuality_THEN_Lowers_Sellin_By_One_AND_Quality_By_Two()
         {
             var item = new Item();
             var quality = 2;
             var sellin = 2;
-            var expectedQuality = 1;
+            var expectedQuality = 0;
             var expectedSellin = 1;
 
             Story.Given("Item is Conjured Mana Cake", () => this.PopulateItem(ItemTypes.ConjuredManaCake, item, quality, sellin))
                 .When("Update Quality", () => this.RunProgram(item))
                 .Then("Quality is lowered", () => this.QualityIs(item, expectedQuality))
                 .And("Sellin is lowered", () => this.SellinIs(item, expectedSellin))
+                .Start();
+        }
+
+        [Fact]
+        public void GIVEN_Item_Is_Conjured_Mana_Cake_AND_Quality_Is_Zero_WHEN_UpdateQuality_THEN_Quality_Remains_At_Zero()
+        {
+            var item = new Item();
+            var quality = 0;
+            var sellin = 2;
+            var expectedQuality = 0;
+
+            Story.Given("Item is Conjured Mana Cake and Quality is Zero", () => this.PopulateItem(ItemTypes.ConjuredManaCake, item, quality, sellin))
+                .When("Update Quality", () => this.RunProgram(item))
+                .Then("Quality Remains at Zero", () => this.QualityIs(item, expectedQuality))
                 .Start();
         }
 
