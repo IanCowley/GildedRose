@@ -216,6 +216,20 @@ namespace GildedRose.Tests
                 .Start();
         }
 
+        [Fact]
+        public void GIVEN_Item_Is_Conjured_Mana_Cake_AND_Is_Passed_Sell_By_Date_WHEN_UpdateQuality_THEN_Quality_Degrades_Twice_As_Fast()
+        {
+            var item = new Item();
+            var quality = 4;
+            var sellin = 2;
+            var expectedQuality = 0;
+
+            Story.Given("Item is Conjured Mana Cake and is passed sell by date", () => this.PopulateItem(ItemTypes.ConjuredManaCake, item, quality, sellin))
+                .When("Update Quality", () => this.RunProgram(item))
+                .Then("Quality Degrades twice as fast", () => this.QualityIs(item, expectedQuality))
+                .Start();
+        }
+
         private void SellinIs(Item item, int expectedSellin)
         {
             Assert.Equal(expectedSellin, item.SellIn);
