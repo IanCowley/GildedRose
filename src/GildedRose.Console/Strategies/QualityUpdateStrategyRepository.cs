@@ -8,7 +8,13 @@ namespace GildedRose.Console.Strategies
 
     public class QualityUpdateStrategyRepository
     {
-        private static readonly IQualityUpdateStrategy[] allQualityUpdateStrategies = { new StandardQualityUpdateStrategy(), new BrieQualityUpdateStrategy(), new BackStagePassesQualityUpdateStrategy() };
+        private static readonly IQualityUpdateStrategy[] allQualityUpdateStrategies =
+            {
+                new StandardQualityUpdateStrategy(),
+                new BrieQualityUpdateStrategy(),
+                new BackStagePassesQualityUpdateStrategy(),
+                new ConjuredManQualityUpdateStrategy()
+            };
         
         public IQualityUpdateStrategy FindQualityUpdateStrategyForItem(Item item)
         {

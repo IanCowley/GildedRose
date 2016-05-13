@@ -2,13 +2,12 @@
 
 namespace GildedRose.Console.Strategies
 {
-    public class StandardQualityUpdateStrategy : DepreciatingQualityUpdateStrategyBase, IQualityUpdateStrategy
+    public class ConjuredManQualityUpdateStrategy : DepreciatingQualityUpdateStrategyBase, IQualityUpdateStrategy
     {
         public bool AcceptsItemName(string itemName)
         {
             return new[] {
-                        ItemTypes.DexterityVest, 
-                        ItemTypes.ElixirMongoose
+                        ItemTypes.ConjuredManaCake
                     }
                     .Contains(
                     itemName);
@@ -18,7 +17,7 @@ namespace GildedRose.Console.Strategies
         {
             get
             {
-                return 1;
+                return 2;
             }
         }
     }
