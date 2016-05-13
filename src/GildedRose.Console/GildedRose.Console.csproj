@@ -46,6 +46,13 @@
     <Compile Include="ItemTypes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategies\BackStagePassesQualityUpdateStrategy.cs" />
+    <Compile Include="Strategies\BrieQualityUpdateStrategy.cs" />
+    <Compile Include="Strategies\IQualityUpdateStrategy.cs" />
+    <Compile Include="Strategies\QualityUpdateService.cs" />
+    <Compile Include="Strategies\QualityUpdateStrategyBase.cs" />
+    <Compile Include="Strategies\StandardQualityUpdateStrategy.cs" />
+    <Compile Include="Strategies\QualityUpdateStrategyRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
