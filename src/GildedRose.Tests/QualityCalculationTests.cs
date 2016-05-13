@@ -220,7 +220,7 @@ namespace GildedRose.Tests
 
         private void PopulateItem(Item item, int quality, int sellin)
         {
-            this.PopulateItem("Test Item", item, quality, sellin);
+            this.PopulateItem(ItemTypes.DexterityVest, item, quality, sellin);
         }
 
         private void PopulateItem(string name, Item item, int quality, int sellin)
