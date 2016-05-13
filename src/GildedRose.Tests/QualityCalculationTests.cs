@@ -221,7 +221,7 @@ namespace GildedRose.Tests
         {
             var item = new Item();
             var quality = 4;
-            var sellin = 2;
+            var sellin = 0;
             var expectedQuality = 0;
 
             Story.Given("Item is Conjured Mana Cake and is passed sell by date", () => this.PopulateItem(ItemTypes.ConjuredManaCake, item, quality, sellin))
